@@ -12,17 +12,12 @@ import csv
 import shutil
 from datetime import datetime, timedelta
 import random
-from dotenv import load_dotenv, dotenv_values
 import pyautogui
 
 shuffled_df = pd.read_csv("shuffled_df.csv")
 
-secrets = dotenv_values("secrets.env")
-
-user = secrets["user"]
-
-password = secrets["password"]
-
+user_id = os.environ.get('nfl_plus_account')
+password = os.environ.get('nfl_plus_password')
 
 
 def get_driver(url):
@@ -58,7 +53,7 @@ def Setup(url):
     # SIGN IN
     wait_til = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="email-input-field"]'))) 
-    driver.find_element(By.XPATH, '//*[@id="email-input-field"]').send_keys(user)
+    driver.find_element(By.XPATH, '//*[@id="email-input-field"]').send_keys(user_id)
     
     wait_til = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="password-input-field"]'))) 
