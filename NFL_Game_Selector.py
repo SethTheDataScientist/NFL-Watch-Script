@@ -12,15 +12,13 @@ import csv
 import shutil
 from datetime import datetime, timedelta
 import random
-from dotenv import load_dotenv, dotenv_values
 import pyautogui
 
-shuffled_df = pd.read_csv("C:/Users/braxt/Downloads/shuffled_df.csv")
+shuffled_df = pd.read_csv("shuffled_df.csv")
 
-secrets = dotenv_values("secrets.env")
 
-user = secrets["user"]
-password = secrets["password"]
+user_id = os.environ.get('nfl_plus_account')
+password = os.environ.get('nfl_plus_password')
 
 
 
@@ -33,7 +31,7 @@ def get_driver(url):
     
      
     
-    driver = webdriver.Chrome(service = Service(executable_path= 'C:/Users/braxt/Downloads/chromedriver.exe'), options = chrome_options)
+    driver = webdriver.Chrome(service = Service(executable_path= 'chromedriver.exe'), options = chrome_options)
     driver.get(url)
     
     return driver
@@ -140,7 +138,7 @@ def Setup(url):
 if __name__ == "__main__":
     
     try:
-        shuffled_df = pd.read_csv("C:/Users/braxt/Downloads/shuffled_df.csv")
+        shuffled_df = pd.read_csv("shuffled_df.csv")
         url = shuffled_df['url'][0]
         season = shuffled_df['season'][0]
         shuffled_df = shuffled_df.drop(index = shuffled_df.index[0])
