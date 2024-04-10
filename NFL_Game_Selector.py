@@ -55,16 +55,17 @@ def Setup(url):
     # SIGN IN
     wait_til = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="email-input-field"]'))) 
-    driver.find_element(By.XPATH, '//*[@id="email-input-field"]').send_keys(user)
+    driver.find_element(By.XPATH, '//*[@id="email-input-field"]').send_keys(user_id)
+     
     
+    wait_til = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div[3]/div'))) 
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[3]/div').click()
+
+
     wait_til = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="password-input-field"]'))) 
-    driver.find_element(By.XPATH, '//*[@id="password-input-field"]').send_keys(password)    
-    
-    wait_til = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div[3]/div[6]/button'))) 
-    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[3]/div[6]/button').click()
-
+    driver.find_element(By.XPATH, '//*[@id="password-input-field"]').send_keys(password)   
 
     pyautogui.FAILSAFE = True
 

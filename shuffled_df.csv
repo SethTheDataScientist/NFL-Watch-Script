@@ -1,5 +1,4 @@
 Unnamed: 0,game_id,season,home_team,away_team,week,season_type,team.x,team.y,url
-3302,2021_07_IND_SF,2021,SF,IND,7,REG,49ers,colts,https://www.nfl.com/plus/games/colts-at-49ers-2021-reg-7/
 3658,2022_13_GB_CHI,2022,CHI,GB,13,REG,bears,packers,https://www.nfl.com/plus/games/packers-at-bears-2022-reg-13/
 3501,2022_02_NE_PIT,2022,PIT,NE,2,REG,steelers,patriots,https://www.nfl.com/plus/games/patriots-at-steelers-2022-reg-2/
 392,2010_09_NO_CAR,2010,CAR,NO,9,REG,panthers,saints,https://www.nfl.com/plus/games/saints-at-panthers-2010-reg-9/
