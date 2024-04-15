@@ -29,7 +29,7 @@ def get_driver(url):
     
      
     
-    driver = webdriver.Chrome(executable_path= 'chromedriver.exe', options = chrome_options)
+    driver = webdriver.Chrome(options = chrome_options)
     driver.get(url)
     
     return driver  
