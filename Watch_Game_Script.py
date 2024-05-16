@@ -69,8 +69,8 @@ def Watch_Game(url, verbose = False):
 
     # Select Continue
     wait_til = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[3]/button/div/div/div/div'))) 
-    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div[3]/button/div/div/div/div').click()
+        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[3]/button/div/div/div/div'))) 
+    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[3]/button/div/div/div/div').click()
     
     if verbose:
         print("Selected Continue")
