@@ -1,15 +1,4 @@
 Unnamed: 0,game_id,season,home_team,away_team,week,season_type,team.x,team.y,url
-578,2011_03_NYG_PHI,2011,PHI,NYG,3,REG,eagles,giants,https://www.nfl.com/plus/games/giants-at-eagles-2011-reg-3/
-1043,2012_17_BAL_CIN,2012,CIN,BAL,17,REG,bengals,ravens,https://www.nfl.com/plus/games/ravens-at-bengals-2012-reg-17/
-1077,2013_01_MIN_DET,2013,DET,MIN,1,REG,lions,vikings,https://www.nfl.com/plus/games/vikings-at-lions-2013-reg-1/
-2198,2017_04_TEN_HOU,2017,HOU,TEN,4,REG,texans,titans,https://www.nfl.com/plus/games/titans-at-texans-2017-reg-4/
-3697,2022_15_SF_SEA,2022,SEA,SF,15,REG,seahawks,49ers,https://www.nfl.com/plus/games/49ers-at-seahawks-2022-reg-15/
-2419,2018_01_WAS_ARI,2018,ARI,WAS,1,REG,cardinals,redskins,https://www.nfl.com/plus/games/redskins-at-cardinals-2018-reg-1/
-1543,2014_14_TB_DET,2014,DET,TB,14,REG,lions,buccaneers,https://www.nfl.com/plus/games/buccaneers-at-lions-2014-reg-14/
-449,2010_13_DAL_IND,2010,IND,DAL,13,REG,colts,cowboys,https://www.nfl.com/plus/games/cowboys-at-colts-2010-reg-13/
-3337,2021_10_BUF_NYJ,2021,NYJ,BUF,10,REG,jets,bills,https://www.nfl.com/plus/games/bills-at-jets-2021-reg-10/
-1579,2014_17_CHI_MIN,2014,MIN,CHI,17,REG,vikings,bears,https://www.nfl.com/plus/games/bears-at-vikings-2014-reg-17/
-653,2011_09_CHI_PHI,2011,PHI,CHI,9,REG,eagles,bears,https://www.nfl.com/plus/games/bears-at-eagles-2011-reg-9/
 1979,2016_08_GB_ATL,2016,ATL,GB,8,REG,falcons,packers,https://www.nfl.com/plus/games/packers-at-falcons-2016-reg-8/
 3323,2021_09_BUF_JAX,2021,JAX,BUF,9,REG,jaguars,bills,https://www.nfl.com/plus/games/bills-at-jaguars-2021-reg-9/
 2332,2017_14_DET_TB,2017,TB,DET,14,REG,buccaneers,lions,https://www.nfl.com/plus/games/lions-at-buccaneers-2017-reg-14/

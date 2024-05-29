@@ -97,13 +97,12 @@ def Watch_Game(url, verbose = False):
     
     pyautogui.moveTo(screen_width-5, 5)  
     
-    time.sleep(3)
           
     condensed = False
     # Select Condensed Version if Possible
     for i in range(3):
         try:
-            time.sleep(5)
+            time.sleep(1)
             wait_til = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, '//div[text() = "Condensed Game Replay"]'))) 
             driver.find_element(By.XPATH, '//div[text() = "Condensed Game Replay"]').click()
@@ -115,13 +114,15 @@ def Watch_Game(url, verbose = False):
             if verbose:
                 print('doesnt have condensed version')
         
-        
+    
+    # Scroll down 100 units
+    pyautogui.scroll(-100)
 
     fullscreen = False
     for i in range(3):
         # Select Full Screen
         try:
-            time.sleep(5)
+            time.sleep(1)
             wait_til = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/main/section/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[3]/div/div/div[2]/div[2]/button[2]/div'))) 
             driver.find_element(By.XPATH, '/html/body/div[3]/main/section/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[3]/div/div/div[2]/div[2]/button[2]/div').click()
