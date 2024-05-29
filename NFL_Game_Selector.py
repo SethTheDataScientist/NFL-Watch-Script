@@ -7,7 +7,7 @@ try:
     dev_level = sys.argv[2]
 except: 
     Games = 1
-    dev_level = "dev"
+    dev_level = "prod"
 
 print(Games)
 print(dev_level)
