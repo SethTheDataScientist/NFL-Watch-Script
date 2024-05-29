@@ -1,5 +1,4 @@
 Unnamed: 0,game_id,season,home_team,away_team,week,season_type,team.x,team.y,url
-1979,2016_08_GB_ATL,2016,ATL,GB,8,REG,falcons,packers,https://www.nfl.com/plus/games/packers-at-falcons-2016-reg-8/
 3323,2021_09_BUF_JAX,2021,JAX,BUF,9,REG,jaguars,bills,https://www.nfl.com/plus/games/bills-at-jaguars-2021-reg-9/
 2332,2017_14_DET_TB,2017,TB,DET,14,REG,buccaneers,lions,https://www.nfl.com/plus/games/lions-at-buccaneers-2017-reg-14/
 313,2010_03_SF_KC,2010,KC,SF,3,REG,chiefs,49ers,https://www.nfl.com/plus/games/49ers-at-chiefs-2010-reg-3/
