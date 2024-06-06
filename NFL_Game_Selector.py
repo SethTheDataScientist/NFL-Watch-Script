@@ -8,6 +8,7 @@ try:
 except: 
     Games = 1
     dev_level = "dev"
+    verbose = True
 
 print(Games)
 print(dev_level)
