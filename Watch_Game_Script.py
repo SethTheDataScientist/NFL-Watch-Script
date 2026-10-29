@@ -27,6 +27,18 @@ def get_driver(url):
     chrome_options.add_argument('--disable-infobars') 
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])    
     
+    chrome_options.add_argument("--disable-features=MediaRouter,TranslateUI,AutofillServerCommunication")
+    chrome_options.add_argument("--disable-speech-api")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-software-rasterizer")
+    chrome_options.add_argument("--mute-audio")
+    chrome_options.add_argument("--disable-extensions")
+    chrome_options.add_argument("--disable-background-networking")
+    chrome_options.add_argument("--no-default-browser-check")
+    chrome_options.add_argument("--disable-component-update")
+    chrome_options.add_argument("--disable-default-apps")
      
     
     driver = webdriver.Chrome(options = chrome_options)
@@ -41,21 +53,30 @@ def Watch_Game(url, verbose = False):
     driver = get_driver(url)
     # Remove Cookies bar
     wait_til = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div/div[2]/button'))) 
-    driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div/div[2]/button').click()
+        EC.presence_of_element_located((By.XPATH, '//*[@id="onetrust-close-btn-container"]/button'))) 
+    driver.find_element(By.XPATH, '//*[@id="onetrust-close-btn-container"]/button').click()
     
     if verbose:
         print("Removed Cookies bar")
 
     time.sleep(2)
+
+
+     # Scroll down 100 units
+    # try:
+    #     pyautogui.scroll(-10000)
+    # except Exception as e:
+    #     if verbose:
+    #         print(f"Could not scroll: {e}")
+
+    # print('AHHHHHH')
+    # # Select Sign In
+    # WebDriverWait(driver, 10).until(
+    #     EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/nami-paywall//nami-content-container//nami-container//nami-container[2]//nami-button'))) 
+    # driver.find_element(By.XPATH, '//*[@id="__next"]/div/div/nami-paywall//nami-content-container//nami-container//nami-container[2]//nami-button').click()
     
-    # Select Sign In
-    wait_til = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div[2]/button'))) 
-    driver.find_element(By.XPATH, '/html/body/div[1]/div/div[2]/button').click()
-    
-    if verbose:
-        print("Selected Sign In Link")
+    # if verbose:
+    #     print("Selected Sign In Link")
 
     # Input username
     wait_til = WebDriverWait(driver, 10).until(
@@ -69,11 +90,17 @@ def Watch_Game(url, verbose = False):
 
     # Select Continue
     wait_til = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div/div/div[3]/button/div/div/div/div'))) 
-    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div/div[3]/button/div/div/div/div').click()
+        EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/div/div/button[1]'))) 
+    driver.find_element(By.XPATH, '//*[@id="__next"]/div/div/div/div/button[1]').click()
     
     if verbose:
         print("Selected Continue")
+
+    # Select sign in with password
+    wait_til = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/div[2]/div/div[4]/button'))) 
+    driver.find_element(By.XPATH, '//*[@id="__next"]/div/div/div[2]/div/div[4]/button').click()
+    
 
     #Input password
     wait_til = WebDriverWait(driver, 10).until(
@@ -87,8 +114,8 @@ def Watch_Game(url, verbose = False):
     
     # Select Sign in again
     wait_til = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/div[2]/div/div[4]/button/div/div'))) 
-    driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[2]/div/div[4]/button/div/div').click()
+        EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div/div/div[2]/div/div[3]/button'))) 
+    driver.find_element(By.XPATH, '//*[@id="__next"]/div/div/div[2]/div/div[3]/button').click()
     
     if verbose:
         print("Selected Sign in Again")
@@ -104,8 +131,8 @@ def Watch_Game(url, verbose = False):
         try:
             time.sleep(1)
             wait_til = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '//div[text() = "Condensed Game Replay"]'))) 
-            driver.find_element(By.XPATH, '//div[text() = "Condensed Game Replay"]').click()
+                EC.presence_of_element_located((By.XPATH, '//*[@id="main-content"]/section/div/div/div/div/div[3]/div[1]/div/div/div[4]'))) 
+            driver.find_element(By.XPATH, '//*[@id="main-content"]/section/div/div/div/div/div[3]/div[1]/div/div/div[4]').click()
             if verbose:
                 print("condensed version activated")
             condensed = True
@@ -116,16 +143,17 @@ def Watch_Game(url, verbose = False):
         
     
     # Scroll down 100 units
-    pyautogui.scroll(-100)
-
+    pyautogui.scroll(-200)
+    time.sleep(3)
     fullscreen = False
     for i in range(3):
         # Select Full Screen
         try:
-            time.sleep(1)
+            time.sleep(3)
             wait_til = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/main/section/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[3]/div/div/div[2]/div[2]/button[2]/div'))) 
-            driver.find_element(By.XPATH, '/html/body/div[3]/main/section/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[3]/div/div/div[2]/div[2]/button[2]/div').click()
+                EC.presence_of_element_located((By.XPATH, '//*[@data-testid = "controls-fullscreen"]'))) 
+            driver.find_element(By.XPATH, '//*[@data-testid = "controls-fullscreen"]').click()
+            driver.find_element(By.XPATH, '//*[@data-testid = "controls-fullscreen"]').click()
             if verbose:
                 print("fullscreen enabled")
             fullscreen = True

@@ -6,7 +6,7 @@ try:
     Games = int(sys.argv[1])
     dev_level = sys.argv[2]
 except: 
-    Games = 1
+    Games = 10
     dev_level = "prod"
 
 print(Games)
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     i = 0
     while i < Games:
         try:
-            shuffled_df = pd.read_csv("shuffled_df.csv")
+            # shuffled_df = pd.read_csv("shuffled_df.csv")
             url = shuffled_df['url'][0]
             season = shuffled_df['season'][0]
             shuffled_df = shuffled_df.drop(index = shuffled_df.index[0])
